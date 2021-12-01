@@ -10,4 +10,18 @@ ReactDOM.render(
     document.querySelector("#root")
 );
 
-console.log(db);
+async function readAllUsers() {
+    try {
+
+        const collectionRef = db.collection("name");
+        const getPromise = collectionRef.get();
+        const snapshot = await getPromise;
+
+        console.log(`Found ${snapshot.size}x user.`)
+
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+readAllUsers();
