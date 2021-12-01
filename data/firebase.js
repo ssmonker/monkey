@@ -12,9 +12,16 @@ const firebaseConfig = {
     measurementId: "G-D8DMZDYZ2N"
   };
 
+  if(!firebaseConfig.apiKey) throw new Error("Missing firebase credential: apiKey")
+  if(!firebaseConfig.apiKey) throw new Error("Missing firebase credential: apiDomain")
+  if(!firebaseConfig.apiKey) throw new Error("Missing firebase credential: projectId")
+  if(!firebaseConfig.apiKey) throw new Error("Missing firebase credential: storageBucket")
+  if(!firebaseConfig.apiKey) throw new Error("Missing firebase credential: messaging!")
+  if(!firebaseConfig.apiKey) throw new Error("Missing firebase credential: appId")
+  if(!firebaseConfig.apiKey) throw new Error("Missing firebase credential: measurementId")
+
   firebase.initializeApp(firebaseConfig);
 
   const db = firebase.firestore();
 
   export {db, firebase };
-  
